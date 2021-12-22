@@ -1,26 +1,40 @@
 const fs = require('fs');
+const readline = require('readline');
 
-//need to add number chosen for list and the n=book details - will be from exported file slected books
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    terminal: false
 
-let selectedBook = '\n' + 'testbook'; //need to update this to take data from number selected -change to object
+});
 
 if (!fs.existsSync('./assets')) {
-    s.mkdir('./assets', (err) => {
+    fs.mkdir('./assets', (err) => {
         if (err) {
             console.log(err);
         }
-        console.log('assets folder created');
     })
 }
 
-function addToList(selected) {
-  //  selectedBook = selected;
-    fs.appendFile('./assets/readingList.txt', selectedBook, (err, data) => {
-        if (err) {
-            console.log(err);
-        }
-        console.log('book added');
+
+function addToList() {
+
+    rl.question('Enter the number of the book you want to add: \n', (numSelected) => {
+
+        const selectedBook = booksArr[numSelected - 1];
+        const selectedBookString = JSON.stringify(selectedBook);
+        
+        fs.appendFile('./assets/readingList.txt', `${selectedBookString}\n`, (err, data) => {
+            if (err) {
+                console.log(err);
+            }
+            console.log(`\n "${selectedBook.Title}" added to Reading List\n`);
+           
+        });
+
     });
+
+
 }
 
 module.exports = { addToList };
