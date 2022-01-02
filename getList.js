@@ -1,4 +1,6 @@
 const fs = require('fs');
+const { instructions } = require('./instructions');
+
 
 
 
@@ -6,14 +8,18 @@ const fs = require('fs');
 function getList() {
 
     if (!fs.existsSync('./assets/readingList.txt')) {
-        console.log('Reading List is Empty');
-        return;
+        console.log('\n Your Reading List is Empty');
+        return instructions();
     }
 
     const stream = fs.createReadStream('./assets/readingList.txt', { encoding: 'utf8' });
 
     stream.on('data', (booksStream) => {
+        console.log('\nYour Reading List:\n');
         console.log(booksStream);
+    }).on('end', () => {
+        instructions();
+
     });
 }
 

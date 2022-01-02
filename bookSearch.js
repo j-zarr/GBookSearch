@@ -1,5 +1,6 @@
 const https = require('https');
 const readline = require('readline');
+const { instructions } = require('./instructions');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -46,8 +47,7 @@ function search() {
                         ` \n ${i + 1}: \n Title: ${bookResults.items[i].volumeInfo.title} \n Authors: ${bookResults.items[i].volumeInfo.authors} \n Publisher: ${bookResults.items[i].volumeInfo.publisher}\n`);
                 }
 
-                rl.setPrompt(` Type A to add a book to your reading list, \n Type S to search again, \n Type L to retreive your Reading List, \n Type E to exit \n\n`)
-                rl.prompt();
+                instructions(); 
 
             }).on('error', (e) => {
                 console.error(e);

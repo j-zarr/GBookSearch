@@ -1,1 +1,9 @@
-{}
+{
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/jest": "^27.4.0",
+    "jest": "^27.4.5"
+  }
+}

@@ -8,13 +8,14 @@ const { exit } = require('./exit');
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-
 });
 
 
 search();
 
+
 rl.on('line', (userInput) => {
+
     if (userInput.toLowerCase().trim() == 's') {
         search();
     }
@@ -27,6 +28,7 @@ rl.on('line', (userInput) => {
     if (userInput.toLowerCase().trim() == 'e') {
         exit();
     }
+
 });
 
 
