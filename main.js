@@ -16,6 +16,10 @@ search();
 
 rl.on('line', (userInput) => {
 
+    if(isInAdd){
+        return;
+    }
+
     if (userInput.toLowerCase().trim() == 's') {
         search();
     }

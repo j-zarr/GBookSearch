@@ -9,8 +9,11 @@ const rl = readline.createInterface({
 
 });
 
+global.isInAdd = false; 
 
 function addToList() {
+
+    isInAdd = true; 
 
     rl.question('\nEnter the number of the book you want to add: ', (numSelected) => {
 
@@ -38,6 +41,7 @@ function addToList() {
                 console.log(err);
             }
             console.log(`\n"${selectedBook.Title}" added to Reading List\n`);
+            isInAdd = false; 
             instructions();
 
         });
