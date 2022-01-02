@@ -15,13 +15,13 @@ function instructions() {
 
         let validStringArr = ['s', 'l', 'a', 'e'];
         if (!validStringArr.includes(userInput)) {
-            
 
-         //   rl.setPrompt('\n\n Please type a valid option...\n');
-         //   rl.prompt();
-            console.error('\n\n Please type a valid instruction (A | S | L | E):');
-            return instructions(); 
-            
+
+            rl.setPrompt('\n\n Please type a valid option...\n');
+            rl.prompt();
+            //console.error('\n\n Please type a valid instruction (A | S | L | E):');
+            return instructions();
+
 
         }
     });
