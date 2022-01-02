@@ -36,15 +36,21 @@ function search() {
                 bookResults = JSON.parse(bookResults);
 
                 for (let i = 0; i < bookResults.items.length; i++) {
-                    booksArr.push({
-                        Title: `${bookResults.items[i].volumeInfo.title}`,
-                        Authors: `${bookResults.items[i].volumeInfo.authors} `,
-                        Publisher: `${bookResults.items[i].volumeInfo.publisher}`
 
+                    let title = `${bookResults.items[i].volumeInfo.title}`;
+                    let authors = `${bookResults.items[i].volumeInfo.authors}` == "undefined" ? "information unavailable" : `${bookResults.items[i].volumeInfo.authors}`;
+                    let publisher = `${bookResults.items[i].volumeInfo.publisher}` == "undefined" ? "information unavailable" : `${bookResults.items[i].volumeInfo.publisher}`;
+
+
+                    booksArr.push({
+                        Title: title,
+                        Authors: authors,
+                        Publisher: publisher
                     });
 
+
                     console.log(
-                        ` \n ${i + 1}: \n Title: ${bookResults.items[i].volumeInfo.title} \n Authors: ${bookResults.items[i].volumeInfo.authors} \n Publisher: ${bookResults.items[i].volumeInfo.publisher}\n`);
+                        ` \n ${i + 1}: \n Title: ${title} \n Authors: ${authors} \n Publisher: ${publisher}\n`);
                 }
 
                 instructions(); 
