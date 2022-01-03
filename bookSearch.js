@@ -11,7 +11,7 @@ const rl = readline.createInterface({
 
 
 const booksAPI = 'https://www.googleapis.com/books/v1/volumes?q=';
-const limitSearch = '&fields=items/volumeInfo(title, authors, publisher)&orderBy=relevance&maxResults=5'
+const limitSearch = '&fields=items/volumeInfo(title, authors, publisher)&orderBy=relevance&maxResults=5';
 
 
 global.booksArr = [];
@@ -24,7 +24,7 @@ function search() {
     let bookResults = '';
 
 
-    rl.question('Enter a book to search: ', (query) => {
+    rl.question('Welcome to Google Book Search.\nHere you can search for books, add books to a Reading List and retrive your Reading List.\n5 results will be displayed for every search.\nTo get started, enter a book to search: ', (query) => {
 
         https.get(booksAPI + query + limitSearch, (res) => {
             // console.log('statusCode:', res.statusCode);
@@ -41,7 +41,6 @@ function search() {
                     let authors = `${bookResults.items[i].volumeInfo.authors}` == "undefined" ? "information unavailable" : `${bookResults.items[i].volumeInfo.authors}`;
                     let publisher = `${bookResults.items[i].volumeInfo.publisher}` == "undefined" ? "information unavailable" : `${bookResults.items[i].volumeInfo.publisher}`;
 
-
                     booksArr.push({
                         Title: title,
                         Authors: authors,
@@ -50,7 +49,7 @@ function search() {
 
 
                     console.log(
-                        ` \n ${i + 1}: \n Title: ${title} \n Authors: ${authors} \n Publisher: ${publisher}\n`);
+                        ` \n${i + 1}: \n Title: ${title} \n Authors: ${authors} \n Publisher: ${publisher}\n`);
                 }
 
                 instructions(); 

@@ -16,7 +16,7 @@ search();
 
 rl.on('line', (userInput) => {
 
-    if(isInAdd){
+    if (isInAdd) {
         return;
     }
 
