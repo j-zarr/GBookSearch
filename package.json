@@ -3,7 +3,24 @@
     "test": "jest"
   },
   "dependencies": {
-    "@types/jest": "^27.4.0",
+    "@types/jest": "^27.4.0"
+  },
+  "devDependencies": {
     "jest": "^27.4.5"
-  }
+  },
+  "name": "booksearch",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-zarr/GBookSearch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j-zarr/GBookSearch/issues"
+  },
+  "homepage": "https://github.com/j-zarr/GBookSearch#readme",
+  "description": ""
 }
