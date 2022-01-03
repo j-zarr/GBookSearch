@@ -6,12 +6,10 @@ Installation:
 
 
 Running app:
-  
   In terminal type: node main
   To exit, type: CNTRL + C
   
 
 Running tests:
-  
   In terminal type: npm test  
   To exit, type: CNTRL + C
