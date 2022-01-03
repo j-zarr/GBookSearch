@@ -1,4 +1,4 @@
-const { mockInput } = require("./util");
+const { mockInput, mockGetRequest } = require("./util");
 
 
 
@@ -41,7 +41,7 @@ test('should go to exit module', () => {
 });
 
 
-test('should throw error', () => {
+test('invalid input should throw error', () => {
   expect(() => {
     mockInput('z');
   }).toThrowError('invalid input');
@@ -54,4 +54,14 @@ test('should throw error', () => {
     mockInput('Thanks');
   }).toThrowError('invalid input');
 
-})
+});
+
+
+
+test('should successfully get response from API', () => {
+  expect(() => {
+    mockGetRequest('Harry Potter');
+  }).not.toThrowError();
+});
+
+

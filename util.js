@@ -1,7 +1,9 @@
+const https = require('https');
 
-let route = '';
+
 
 function mockInput(str) {
+    let route = '';
     str = str.toLowerCase();
 
     if (str == 'a') {
@@ -25,4 +27,18 @@ function mockInput(str) {
 }
 
 
-module.exports = { mockInput }; 
+
+
+function mockGetRequest(searchQuery) {
+
+    https.get(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&fields=items/volumeInfo(title)&orderBy=relevance&maxResults=1`, (res) => {
+        if (res.statusCode != 200) {
+            throw 'search unsuccessful';
+        }
+    });
+}
+
+
+
+
+module.exports = { mockInput, mockGetRequest }; 
