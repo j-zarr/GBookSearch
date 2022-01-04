@@ -12,6 +12,7 @@ const rl = readline.createInterface({
 
 function exit() {
     rl.close();
+    console.clear(); 
     console.log(`\n Happy reading! \n`);
 
     if (fs.existsSync('./assets/readingList.txt')) {
