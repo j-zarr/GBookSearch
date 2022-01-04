@@ -11,6 +11,10 @@ const rl = readline.createInterface({
 });
 
 
+global.isInAdd = false; 
+global.booksArr = [];
+
+
 search();
 
 

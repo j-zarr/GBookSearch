@@ -7,22 +7,26 @@ const rl = readline.createInterface({
     terminal: false
 });
 
-function instructions() {
+let isValidInput = true;
 
-    const userOptions = ` _________________________________________\n\n Type A to add a book to your reading list \n Type S to search again \n Type L to retreive your Reading List \n Type E to exit \n__________________________________________\n\n `
+function instructions() {
+    let userOptions = '';
+
+    if (isValidInput) {
+        userOptions = ` _________________________________________\n\n Type A to add a book to your reading list \n Type S to search again \n Type L to retreive your Reading List \n Type E to exit \n__________________________________________\n\n `
+    } if (!isValidInput) {
+        userOptions = '\n\n Please type a valid instruction (A | S | L | E):';
+    }
 
     rl.question(userOptions, (userInput) => {
 
         let validStringArr = ['s', 'l', 'a', 'e'];
         if (!validStringArr.includes(userInput)) {
 
-
-            rl.setPrompt('\n\n Please type a valid option...\n');
-            rl.prompt();
-            //console.error('\n\n Please type a valid instruction (A | S | L | E):');
+            isValidInput = false;
             return instructions();
-
-
+        }else{
+            isValidInput = true; 
         }
     });
 }

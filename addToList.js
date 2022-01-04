@@ -9,7 +9,7 @@ const rl = readline.createInterface({
 
 });
 
-global.isInAdd = false; 
+
 
 function addToList() {
 

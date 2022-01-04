@@ -1,16 +1,20 @@
 # GBookSearch
 
-Installation:
-  1. Download repo or clone in terminal by typing: git clone https://github.com/j-zarr/GBookSearch.git <optional argument to clone to a new directory name>
-  2. Install node modules/dependencies. In your IDE/terminal cd to relevant directory. Type: **npm i**
+**TO INSTALL:**
+  1. Download repo or clone in terminal by typing: **git clone https://github.com/j-zarr/GBookSearch.git**
+  2. Install node modules/dependencies:
+        a. In your IDE/terminal **cd** to relevant directory
+        b. Type: **npm i**
 
 
-Running app:
+**TO RUN APP:**
   In terminal type: **node main**
   
   
-Running tests:
+**TO RUN TESTS:**
   In terminal type: **npm test** 
   
-  
-To exit app or tests, press: CNTRL + C
+
+To exit app or tests, press: **CNTRL + C**
+To clear console, type: **clear** 
+
