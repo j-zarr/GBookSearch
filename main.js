@@ -10,7 +10,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-
+global.isInSearch = false; 
 global.isInAdd = false; 
 global.booksArr = [];
 
@@ -22,6 +22,10 @@ rl.on('line', (userInput) => {
 
     if (isInAdd) {
         return;
+    }
+
+    if(isInSearch){
+        return; 
     }
 
     if (userInput.toLowerCase().trim() == 's') {

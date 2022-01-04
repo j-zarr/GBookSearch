@@ -17,6 +17,7 @@ const limitSearch = '&fields=items/volumeInfo(title, authors, publisher)&orderBy
 
 
 function search() {
+    isInSearch = true; 
     console.clear();
 
     booksArr = [];
@@ -50,7 +51,7 @@ function search() {
                     console.log(
                         ` \n${i + 1}: \n Title: ${title} \n Authors: ${authors} \n Publisher: ${publisher}\n`);
                 }
-
+                
                 instructions(); 
 
             }).on('error', (e) => {

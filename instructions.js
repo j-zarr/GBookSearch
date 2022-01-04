@@ -10,6 +10,7 @@ const rl = readline.createInterface({
 let isValidInput = true;
 
 function instructions() {
+    isInSearch = false; 
     let userOptions = '';
 
     if (isValidInput) {
