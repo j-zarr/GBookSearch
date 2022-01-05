@@ -1,21 +1,50 @@
 jest.mock('./bookSearch');
-const { mockGetRequest } = require("./bookSearch");
+const { mockGetRequest} = require("./bookSearch");
 
 
 
-test('should successfully get response from API', () => {
-  expect(() => {
-    mockGetRequest('Harry Potter');
-  }).not.toThrowError();
-});
-
-
-
-test('should throw error if fails to fetch from API', () => {
-  try {
-    mockGetRequest('');
-  }
-  catch (error) {
-    expect(error).toEqual('search unsuccessful');
-  }
+test('should return modified parsed results', () => {
+  expect.assertions(1);
+  return mockGetRequest('Harry').then(data => expect(data).toEqual([
+    [
+      '1',
+      {
+        Title: 'Harry',
+        Authors: 'Angela Levin',
+        Publisher: 'information unavailable'
+      }
+    ],
+    [
+      '2',
+      {
+        Title: 'Playing Harry Potter',
+        Authors: 'Lisa S. Brenner',
+        Publisher: 'McFarland'
+      }
+    ],
+    [
+      '3',
+      {
+        Title: 'Finding Freedom',
+        Authors: 'Omid Scobie,Carolyn Durand',
+        Publisher: 'HarperCollins'
+      }
+    ],
+    [
+      '4',
+      {
+        Title: 'Meghan and Harry',
+        Authors: 'Lady Colin Campbell',
+        Publisher: 'information unavailable'
+      }
+    ],
+    [
+      '5',
+      {
+        Title: 'Wild About Harry',
+        Authors: 'Linda Lael Miller',
+        Publisher: 'Harlequin'
+      }
+    ]
+  ]))
 });

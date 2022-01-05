@@ -11,7 +11,7 @@ const rl = readline.createInterface({
 
 
 const booksAPI = 'https://www.googleapis.com/books/v1/volumes?q=';
-const limitSearch = '&fields=items/volumeInfo(title, authors, publisher)&orderBy=relevance&maxResults=5';
+const limitSearch = '&fields=items/volumeInfo(title,authors,publisher)&orderBy=relevance&maxResults=5';
 
 
 
