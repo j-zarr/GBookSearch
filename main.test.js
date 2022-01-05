@@ -49,7 +49,7 @@ describe('tests for exit path', () => {
     expect(result1).toBe('Exit');
   });
 
-  test('should go to getList module', () => {
+  test('should go to exit module', () => {
     const result2 = mockInput('e');
     expect(result2).toBe('Exit');
   });
