@@ -29,16 +29,16 @@ rl.on('line', (userInput) => {
     }
 
     if (userInput.toLowerCase().trim() == 's') {
-        search();
+       return search();
     }
     if (userInput.toLowerCase().trim() == 'l') {
-        getList();
+       return getList();
     }
     if (userInput.toLowerCase().trim() == 'a') {
-        addToList();
+        return addToList();
     }
     if (userInput.toLowerCase().trim() == 'e') {
-        exit();
+        return exit();
     }
 
 });
