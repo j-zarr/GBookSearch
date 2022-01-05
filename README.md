@@ -15,7 +15,7 @@
   
 **RUNNING TESTS:**
   1. to run all tests, in terminal type: <mark>npm test</mark>
-  2. to run tests on individual files, in terminal type: <mark>npm test <file name> </mark>
+  2. to run tests on individual files, in terminal type: <mark>npm test *file name* </mark>
   
 
 To exit app or tests, press: **CNTRL + C**
