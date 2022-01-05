@@ -4,8 +4,8 @@
   1. Download repo or clone in terminal by typing: <mark>git clone https://github.com/j-zarr/GBookSearch.git</mark>
   2. Install node modules/dependencies:
       <ul>
-        <li> In your IDE/terminal **cd** to relevant directory</li>
-        <li> Type: **npm i**</li>
+        <li> In your IDE/terminal cd to relevant directory</li>
+        <li> Type: npm i</li>
       </ul>
 
 
